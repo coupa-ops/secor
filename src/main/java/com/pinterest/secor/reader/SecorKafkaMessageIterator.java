@@ -58,6 +58,7 @@ public class SecorKafkaMessageIterator implements KafkaMessageIterator {
         props.put("client.id", IdUtil.getConsumerId());
         props.put("key.deserializer", ByteArrayDeserializer.class);
         props.put("value.deserializer", ByteArrayDeserializer.class);
+        props.put("ssl.endpoint.identification.algorithm", config.getEndpointIdentificationAlgorithm());
 
         optionalConfig(config.getNewConsumerRequestTimeoutMs(), conf -> props.put("request.timeout.ms", conf));
         optionalConfig(config.getSocketReceiveBufferBytes(), conf -> props.put("receive.buffer.bytes", conf));

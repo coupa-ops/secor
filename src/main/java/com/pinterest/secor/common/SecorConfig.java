@@ -139,6 +139,10 @@ public class SecorConfig {
         return getString("kafka.new.consumer.ssl.truststore.password");
     }
 
+    public String getEndpointIdentificationAlgorithm() {
+        return getString("kafka.new.consumer.ssl.endpoint.identification.algorithm");
+    }
+
     public String getIsolationLevel() {
         return getString("kafka.new.consumer.isolation.level");
     }
